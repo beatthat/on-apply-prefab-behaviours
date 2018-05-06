@@ -1,10 +1,10 @@
 {
   "name": "on-apply-prefab-behaviours",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "fill in description",
   "main": "index.js",
   "config": {
-      "scope": "beatthat"
+    "scope": "beatthat"
   },
   "repository": {
     "type": "git",
