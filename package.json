@@ -1,6 +1,7 @@
 {
   "name": "on-apply-prefab-behaviours",
   "version": "1.0.0",
+  "scope": "beatthat",
   "description": "fill in description",
   "main": "index.js",
   "repository": {
@@ -31,7 +32,9 @@
     "postversion": "git push && git push --tags && npm run clean"
   },
   "dependencies": {
+    "get-components-ext": "github:beatthat/get-components-ext#semver:^1.0.0",
     "path": "^0.12.7",
+    "pools": "github:beatthat/pools#semver:^1.0.0",
     "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.0"
   }
 }
