@@ -2,7 +2,7 @@
   "name": "on-apply-prefab-behaviours",
   "version": "1.0.2",
   "scope": "beatthat",
-  "description": "fill in description",
+  "description": "Enables you to execute custom behaviours on prefabs on 'Apply' (after save).",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -12,7 +12,8 @@
     "index.js",
     "scripts",
     "src",
-    "Runtime"
+    "Runtime",
+    "Samples"
   ],
   "author": "larrykirschner@gmail.com",
   "license": "MIT",
@@ -36,5 +37,6 @@
     "path": "^0.12.7",
     "pools": "github:beatthat/pools#semver:^1.0.0",
     "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.0"
-  }
+  },
+  "devDependencies": {}
 }
