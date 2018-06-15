@@ -1,16 +1,18 @@
 using System.Collections.Generic;
-using UnityEngine;
+using BeatThat.GetComponentsExt;
+using BeatThat.Pools;
 using UnityEditor;
+using UnityEngine;
 
 namespace BeatThat.OnApplyPrefabBehaviours
 {
-	/// <summary>
-	/// Enables you to execute custom behaviours on prefabs when they've been applied.
-	/// 
-	/// When present, this class will bind to events for PrefabUtility.prefabInstanceUpdated
-	/// and then find and execute all <code>OnApplyPrefabBehaviour</code>s on the prefab (the prefab rather than the instance).
-	/// </summary>
-	[InitializeOnLoad]
+    /// <summary>
+    /// Enables you to execute custom behaviours on prefabs when they've been applied.
+    /// 
+    /// When present, this class will bind to events for PrefabUtility.prefabInstanceUpdated
+    /// and then find and execute all <code>OnApplyPrefabBehaviour</code>s on the prefab (the prefab rather than the instance).
+    /// </summary>
+    [InitializeOnLoad]
 	internal static class OnApplyPrefab_FindAndExecuteBehaviours
 	{
 		static OnApplyPrefab_FindAndExecuteBehaviours()
@@ -61,3 +63,4 @@ namespace BeatThat.OnApplyPrefabBehaviours
 		}
 	}
 }
+
