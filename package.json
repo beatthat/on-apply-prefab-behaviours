@@ -1,6 +1,6 @@
 {
   "name": "on-apply-prefab-behaviours",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scope": "beatthat",
   "description": "Enables you to execute custom behaviours on prefabs on 'Apply' (after save).",
   "main": "index.js",
