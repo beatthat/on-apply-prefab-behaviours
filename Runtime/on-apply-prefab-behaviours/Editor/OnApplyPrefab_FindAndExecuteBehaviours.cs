@@ -13,26 +13,32 @@ namespace BeatThat.OnApplyPrefabBehaviours
     /// and then find and execute all <code>OnApplyPrefabBehaviour</code>s on the prefab (the prefab rather than the instance).
     /// </summary>
     [InitializeOnLoad]
-	internal static class OnApplyPrefab_FindAndExecuteBehaviours
-	{
-		static OnApplyPrefab_FindAndExecuteBehaviours()
-		{
-			PrefabUtility.prefabInstanceUpdated += OnPrefabInstanceUpdate;
-		}
+    internal static class OnApplyPrefab_FindAndExecuteBehaviours
+    {
+        static OnApplyPrefab_FindAndExecuteBehaviours()
+        {
+            PrefabUtility.prefabInstanceUpdated += OnPrefabInstanceUpdate;
+        }
 
-		private static List<GameObject> instancesUpdating = new List<GameObject> ();
+        private static List<GameObject> instancesUpdating = new List<GameObject>();
 
-		static void OnPrefabInstanceUpdate(GameObject prefabInstance)
-		{
-			if (instancesUpdating.Contains (prefabInstance)) {
-				return;
-			}
+        static void OnPrefabInstanceUpdate(GameObject prefabInstance)
+        {
+            if (instancesUpdating.Contains(prefabInstance))
+            {
+                return;
+            }
 
-			instancesUpdating.Add (prefabInstance);
+            instancesUpdating.Add(prefabInstance);
 
-			var prefab = PrefabUtility.GetPrefabParent(prefabInstance) as GameObject;
+            var prefab =
+#if UNITY_2018_2_OR_NEWER
+                PrefabUtility.GetCorrespondingObjectFromSource(prefabInstance) as GameObject;
+#else
+                PrefabUtility.GetPrefabParent(prefabInstance) as GameObject;
+#endif
 
-			FindAndExecuteBehaviours_DepthFirst (prefab.gameObject, prefabInstance, prefab);
+            FindAndExecuteBehaviours_DepthFirst (prefab.gameObject, prefabInstance, prefab);
 
 			instancesUpdating.Remove (prefabInstance);
 
